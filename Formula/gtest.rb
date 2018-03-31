@@ -14,8 +14,8 @@ class Gtest < Formula
   needs :cxx11
   def install
      ENV.deparallelize  # if your formula fails when building in parallel
-    system "git submodule init"
-    system "git submodule update"  
+#    system "git submodule init"
+#    system "git submodule update"  
     # Remove unrecognized options if warned by configure
     args = std_cmake_args
     args << "-DCXXFLAGS=-std=c++14"
