@@ -2,13 +2,13 @@
 #                http://www.rubydoc.info/github/Homebrew/brew/master/Formula
 # PLEASE REMOVE ALL GENERATED COMMENTS BEFORE SUBMITTING YOUR PULL REQUEST!
 
-class gtest < Formula
+class Gtest < Formula
   desc "Google test frimework"
   homepage "https://github.com/google/googletest"
   url "https://github.com/google/googletest/archive/release-1.8.0.zip"
   #version "2.0.0-RC2"
   sha256 "f3ed3b58511efd272eb074a3a6d6fb79d7c2e6a0e374323d1e6bcbcc1ef141bf"
-  head "https://github.com/google/googletest.git", :branch => "master", :tag => "release-1.8.0", :using =>:git 
+    head "https://github.com/google/googletest.git", :branch => "master", :tag => "release-1.8.0", :using =>:git 
 
   depends_on "cmake" => :build
   needs :cxx11
@@ -24,7 +24,6 @@ class gtest < Formula
 	system "cmake", "..", *args
 	system "make -j4","install" 
     end
-#    system "make install" # if this fails, try separate make/make install steps
   end
 
   test do
