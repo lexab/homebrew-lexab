@@ -22,7 +22,8 @@ class Gtest < Formula
     #
     mkdir "build" do
 	system "cmake", "..", *args
-	system "make -j4","install" 
+	system "make -j4"
+	system" make install" 
     end
   end
 
