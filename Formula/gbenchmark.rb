@@ -6,22 +6,18 @@ class Gbenchmark < Formula
   homepage "https://github.com/google/benchmark"
   url "https://github.com/google/benchmark/archive/v1.4.1.tar.gz"
   sha256 "f8e525db3c42efc9c7f3bc5176a8fa893a9a9920bbd08cef30fb56a51854d60d"
-  head "https://github.com/google/googletest.git", :branch => "master", :tag => "v1.4.1", :using =>:git
+  version "1.4.1"
+  head "https://github.com/google/benchmark.git", :branch => "master", :tag => "v1.4.1", :using =>:git
 
   depends_on "cmake" => :build
-
+  depends_on "gtest" => :build
   def install
-    # ENV.deparallelize  # if your formula fails when building in parallel
-    # Remove unrecognized options if warned by configure
-#    system "./configure", "--disable-debug",
-#                          "--disable-dependency-tracking",
-#                          "--disable-silent-rules",
-#                          "--prefix=#{prefix}"
     args = std_cmake_args
-    std_cmake_args << "-DCXXFLAGS=-std=c++14 " << "-DBENCHMARK_DOWNLOAD_DEPENDENCIES=ON " << "-DCMAKE_BUILD_TYPE=RELEASE "
-    std_cmake_args << "-DBENCHMARK_ENABLE_INSTALL=ON" << "-DBENCHMARK_ENABLE_GTEST_TESTS=OFF"
+    args << "-DCXXFLAGS=-std=c++14" 
+    args << "-DBENCHMARK_ENABLE_INSTALL=ON" 
+    args << "-DBENCHMARK_ENABLE_GTEST_TESTS=ON"
         mkdir "build" do
-        system "cmake", "..", *std_cmake_args
+        system "cmake", "..", *args
         system "cmake", "--build", ".", "-j", "4", "--target", "all"
         system "cmake", "--build", ".", "--target", "install/strip"
         end
