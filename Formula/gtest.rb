@@ -5,7 +5,7 @@
 class Gtest < Formula
   desc "Google Test framework"
   homepage "https://github.com/google/googletest"
-  url https://github.com/google/googletest/archive/release-1.8.1.tar.gz
+  url "https://github.com/google/googletest/archive/release-1.8.1.tar.gz"
   version "1.8.1"
   sha256 "9bf1fe5182a604b4135edc1a425ae356c9ad15e9b23f9f12a02e80184c3a249c"
    head "https://github.com/google/googletest.git", :branch => "master", :tag => "release-1.8.1", :using =>:git 
