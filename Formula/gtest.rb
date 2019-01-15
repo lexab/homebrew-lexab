@@ -22,8 +22,8 @@ class Gtest < Formula
     #
     mkdir "build" do
 	system "cmake", "..", *args
-	system "cmake", "-j 4", "--build .", "--target all"
-	system "cmake", "--build .", "--target install/strip" 
+	system "cmake", "--build", ".", "-j", "4", "--target", "all"
+	system "cmake", "--build", ".", "--target", "install/strip" 
     end
   end
 
