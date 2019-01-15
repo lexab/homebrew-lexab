@@ -3,12 +3,12 @@
 # PLEASE REMOVE ALL GENERATED COMMENTS BEFORE SUBMITTING YOUR PULL REQUEST!
 
 class Gtest < Formula
-  desc "Google test frimework"
+  desc "Google Test framework"
   homepage "https://github.com/google/googletest"
-  url "https://github.com/google/googletest/archive/release-1.8.0.zip"
-  #version "2.0.0-RC2"
-  sha256 "f3ed3b58511efd272eb074a3a6d6fb79d7c2e6a0e374323d1e6bcbcc1ef141bf"
-    head "https://github.com/google/googletest.git", :branch => "master", :tag => "release-1.8.0", :using =>:git 
+  url https://github.com/google/googletest/archive/release-1.8.1.tar.gz
+  version "1.8.1"
+  sha256 "9bf1fe5182a604b4135edc1a425ae356c9ad15e9b23f9f12a02e80184c3a249c"
+   head "https://github.com/google/googletest.git", :branch => "master", :tag => "release-1.8.1", :using =>:git 
 
   depends_on "cmake" => :build
   needs :cxx11
@@ -22,8 +22,8 @@ class Gtest < Formula
     #
     mkdir "build" do
 	system "cmake", "..", *args
-	system "make -j4"
-	system" make install" 
+	system "cmake", "-j 4", "--build .", "--target all"
+	system "cmake", "--build .", "--target install/strip" 
     end
   end
 
