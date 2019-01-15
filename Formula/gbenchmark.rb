@@ -25,7 +25,6 @@ class Gbenchmark < Formula
         system "cmake", "--build", ".", "-j", "4", "--target", "all"
         system "cmake", "--build", ".", "--target", "install/strip"
         end
-    end
 #    system "make", "install" # if this fails, try separate make/make install steps
   end
 
