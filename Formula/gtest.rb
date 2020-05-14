@@ -11,7 +11,7 @@ class Gtest < Formula
    head "https://github.com/google/googletest.git", :branch => "master", :tag => "release-1.10.0", :using =>:git 
 
   depends_on "cmake" => :build
-  needs :cxx11
+  needs :c++11
   def install
      ENV.deparallelize  # if your formula fails when building in parallel
 #    system "git submodule init"
