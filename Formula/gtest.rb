@@ -5,10 +5,10 @@
 class Gtest < Formula
   desc "Google Test framework"
   homepage "https://github.com/google/googletest"
-  url "https://github.com/google/googletest/archive/release-1.8.1.tar.gz"
-  version "1.8.1"
-  sha256 "9bf1fe5182a604b4135edc1a425ae356c9ad15e9b23f9f12a02e80184c3a249c"
-   head "https://github.com/google/googletest.git", :branch => "master", :tag => "release-1.8.1", :using =>:git 
+  url "https://github.com/google/googletest/archive/release-1.10.0.tar.gz"
+  version "1.10.0"
+  sha256 "9dc9157a9a1551ec7a7e43daea9a694a0bb5fb8bec81235d8a1e6ef64c716dcb"
+   head "https://github.com/google/googletest.git", :branch => "master", :tag => "release-1.10.0", :using =>:git 
 
   depends_on "cmake" => :build
   needs :cxx11
